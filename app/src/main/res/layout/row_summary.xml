@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:weightSum="4" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/coffret_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text=" "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/coffret_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="2"
+            android:text=" " />
+    </LinearLayout>
+    
+    <View
+        android:id="@+id/verticalSeparator1" 
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:background="#77777777"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:layout_gravity="center_vertical"
+        android:gravity="left|center_vertical"
+        android:padding="5dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="3dp"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/care_of_empty"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_name_benificiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Tag y gff "
+				android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/email_benifiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="email "
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/change_benificiary"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/order_back_rounded_corners"
+            android:orientation="vertical"
+            android:gravity="left" >
+            <TextView
+                android:id="@+id/change_btn_order_popup"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:lines="1"
+                android:padding="4dp"
+                android:maxLines="1"
+                android:text="@string/change" />
+        </LinearLayout>
+    </LinearLayout>
+    
+        <View
+        android:id="@+id/verticalSeparator2" 
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+                android:background="#77777777"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="right|center_vertical"
+        android:gravity="right|center_vertical"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical" >
+         <TextView
+             	android:id="@+id/price_coffret"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:gravity="right|center_vertical"
+                android:text="77 €"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    
+	
+    
+
+</TableRow>

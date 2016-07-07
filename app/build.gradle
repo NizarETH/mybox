@@ -1,0 +1,208 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.github.triplet.gradle:play-publisher:1.1.2'
+        classpath 'com.android.tools.build:gradle:1.3.1'
+        // The Fabric Gradle plugin uses an open ended version to react
+        // quickly to Android tooling updates
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.github.triplet.play'
+apply plugin: 'io.fabric'
+
+repositories {
+    jcenter()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+play {
+    //Paperpad-0df7eb6de5c0.p12  <<====>> 315637457665-96v76utu2gm6cgt7jau3rhvnvbu6thdp@developer.gserviceaccount.com
+    //Paperpad Business-3b91895cadc6.p12  <<====>> 75389784733-2qt0qnjjcfvljum02kvop6d37uqvvgkg@developer.gserviceaccount.com
+    //Paperpad Business 2-60b815253825.p12  <<====>> 510202641371-5dd0um5asrpupacngh6t21sjdkc15uqj@developer.gserviceaccount.com
+    //paperpad custom-c3180e7dfd3f.p12  <<====>> 45702698730-77t0t6ksn90rbcu4glqahagt9v618n4u@developer.gserviceaccount.com
+                                                                                                                     serviceAccountEmail ='45702698730-77t0t6ksn90rbcu4glqahagt9v618n4u@developer.gserviceaccount.com'
+             pk12File = file('paperpad custom-c3180e7dfd3f.p12')
+             errorOnSizeLimit = false
+    track = 'production'// 'production' // or 'rollout' or 'beta' or 'alpha'
+    //userFraction = 0.1 // only necessary for 'rollout', in this case default is 0.1
+    uploadImages = true
+}
+
+
+android {
+
+    dexOptions {
+
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+/*    dexOptions {
+        preDexLibraries = false
+    }*/
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    signingConfigs {
+        debug_config {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
+        }
+        //keystore_
+          release_config {
+              keyAlias 'euphor-paperpad'
+              keyPassword 'paperpadeuphor2013'
+              storeFile file('release.keystore')
+              storePassword 'paperpadeuphor2013'
+          }
+          //close_
+    }
+
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        applicationId 'com.paperpad.MoulinsDuDuc'
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 21 //code_to_change
+        versionName '2.0.0' //value_to_change
+        signingConfig signingConfigs.debug_config
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            debuggable false
+            //runProguard false
+            signingConfig signingConfigs.release_config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug_config
+            renderscriptDebuggable false
+        }
+    }
+
+    productFlavors {
+        MyBox {
+            applicationId 'com.paperpad.mybox'
+            minSdkVersion 11
+            signingConfig signingConfigs.debug_config
+            targetSdkVersion 22
+            versionCode 21 //code_to_change
+            versionName '2.0.0' //value_to_change
+        }
+        MyBoxApps {
+            applicationId 'com.paperpad.MoulinsDuDuc'
+            minSdkVersion 11
+            signingConfig signingConfigs.release_config
+            targetSdkVersion 22
+            versionCode 21 //code_to_change
+            versionName '2.0.0' //value_to_change
+        }
+    }
+
+    sourceSets {
+
+
+        MyBox {
+            java.srcDirs = ['MyBox/java']
+            resources.srcDirs = ['MyBox/res']
+            assets.srcDirs = ['MyBox/assets']
+            manifest.srcFile 'MyBox/AndroidManifest.xml'
+        }
+
+        MyBoxApps {
+            java.srcDirs = ['MyBoxApps/java']
+            resources.srcDirs = ['MyBoxApps/res']
+            assets.srcDirs = ['MyBoxApps/assets']
+            manifest.srcFile 'MyBoxApps/AndroidManifest.xml'
+        }
+    }
+}
+
+
+dependencies {
+    /*compile('com.android.support:appcompat-v7:19.1.0') {
+        // really use 19.1.0 even if something else resolves higher
+        force = true
+    }*/
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+
+    //compile 'com.android.support:design:22.2.0'
+    //compile 'com.android.support:appcompat-v7:22.2.0'
+
+    // Crashlytics Kit
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true
+    }
+    compile('com.squareup.picasso:picasso:2.5.2') { exclude module: 'support-v4' }
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+
+    compile 'com.google.android.gms:play-services:6.1.+'
+    compile 'com.mcxiaoke.volley:library:1.0.6@aar'
+    //compile 'com.google.android.gms:play-services-gcm:8.1.0'
+
+
+    compile files('libs/gcm.jar')
+    compile files('libs/gcm-src.jar')
+    compile files('libs/httpmime-4.1.jar')
+    compile files('libs/jackson-annotations-2.1.4.jar')
+    compile files('libs/jackson-core-2.1.4.jar')
+    compile files('libs/jackson-databind-2.1.4.jar')
+    compile files('libs/json-simple-1.1.1.jar')
+    compile files('libs/jsr250-api-1.0.jar')
+    compile files('libs/ormlite-android-4.45.jar')
+    compile files('libs/ormlite-core-4.45.jar')
+    compile files('libs/TestFlightLib.jar')
+    compile files('libs/validation-api-1.0.0.GA.jar')
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+
+    compile project(':progresswheel-master')
+
+}
+
+/*def Properties props = new Properties()
+def propFile = new File('signing.properties')
+if (propFile.canRead()) {
+    props.load(new FileInputStream(propFile))
+
+    if (props != null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+            props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+        android.signingConfigs.release_config.storeFile = file(props['STORE_FILE'])
+        android.signingConfigs.release_config.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release_config.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release_config.keyPassword = props['KEY_PASSWORD']
+    } else {
+        println 'signing.properties found but some entries are missing'
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    println 'signing.properties not found'
+    android.buildTypes.release.signingConfig = null
+}*/

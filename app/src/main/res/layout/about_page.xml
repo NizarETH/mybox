@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+                android:background="#ccffffff" >
+
+    <RelativeLayout
+        android:id="@+id/about_page_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="@drawable/ribbon_full" >
+
+        <com.paperpad.mybox.widgets.AViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ccffffff"
+            android:layout_marginTop="30dp" >
+
+            <LinearLayout
+                android:id="@+id/aboutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp" >
+
+                <TextView
+                    android:id="@+id/aboutTitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/about_screen1"
+                    android:textSize="@dimen/title_window" />
+
+                <ImageView
+                    android:id="@+id/aboutImg_"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:src="@drawable/captures" />
+
+                <TextView
+                    android:id="@+id/aboutDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:maxLines="3"
+                    android:textSize="@dimen/html_txt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp" >
+
+                <TextView
+                    android:id="@+id/aboutTitle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/about_screen2"
+                    android:textSize="@dimen/title_window" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:src="@drawable/captures" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp" >
+
+                <TextView
+                    android:id="@+id/aboutTitle3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/about_screen3"
+                    android:textSize="@dimen/title_window" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:src="@drawable/envois" />
+            </LinearLayout>
+        </com.paperpad.mybox.widgets.AViewFlipper>
+
+        <View
+            android:id="@+id/bgFlipperIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#AAFFFFFF" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_close_2x"
+            android:tag="aboutClose" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutBtnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="12dp" >
+
+        <Button
+            android:id="@+id/aboutConditionBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+                        android:layout_gravity="center"
+            android:text="@string/general_condition_sale"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/html_txt" />
+
+        <Button
+            android:id="@+id/aboutContactBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="@string/contact_us"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/html_txt" />
+    </LinearLayout>
+
+</LinearLayout>

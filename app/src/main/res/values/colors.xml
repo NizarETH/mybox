@@ -1,0 +1,7 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="Black0Percent">#00000000</color>
+    <color name="white_clear">#ffffffff</color>
+	<color name="honeycombish_blue">#FF58BAED</color>
+</resources>

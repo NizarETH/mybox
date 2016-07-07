@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/cgvContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CC2DA1C2"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.paperpad.mybox.widgets.ArrowImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:rotation="180" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/order_online"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/btn_txt_x_small" />
+
+        <TextView
+            android:id="@+id/titleAccount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@string/general_condition_sale"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/label_window_small"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/validate"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/accept"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/btn_txt_x_small" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

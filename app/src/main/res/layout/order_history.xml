@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/orderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Commande#3333"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/notificationOrderId"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_margin="10dp"
+            android:text="@string/resend_notification"
+            android:textSize="@dimen/btn_txt_x_small"
+            android:textColor="#ffffff"
+            android:background="#77444444" />
+    </RelativeLayout>
+    
+            <TextView
+            android:id="@+id/boxsOrdred"
+            android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+            android:gravity="left"
+android:layout_marginLeft="10dp"
+            android:text="@string/boxes_ordred"
+            android:textSize="@dimen/html_txt"
+            android:textStyle="italic" />
+
+
+
+</LinearLayout>

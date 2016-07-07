@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imgBox"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:src="@drawable/icon" />
+
+    <LinearLayout
+        android:id="@+id/texts"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/titleBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product"
+            android:textStyle="bold"
+            android:textSize="@dimen/label_window_medium" />
+
+        <TextView
+            android:id="@+id/descBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="a description"
+            android:textSize="@dimen/label_window_small" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/priceBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90 €"
+        android:layout_marginRight="10dp"
+        android:textSize="@dimen/label_window_small"
+        android:textStyle="bold" />
+    <LinearLayout 
+        android:id="@+id/ArrowBox"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="5dp" >
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>

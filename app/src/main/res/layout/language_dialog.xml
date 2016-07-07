@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bonuspack_bubble_white_mod2"
+    android:orientation="vertical" >
+
+        <LinearLayout
+        android:id="@+id/englishContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/ad_selectable_background"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/en" />
+
+        <TextView
+            android:id="@+id/english"
+            style="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingRight="50dp"
+            android:text="@string/english"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/frenchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/ad_selectable_background"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/fr" />
+
+        <TextView
+            android:id="@+id/french"
+            style="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingRight="50dp"
+            android:text="@string/french"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!--
+    <LinearLayout
+        android:id="@+id/spanishContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@drawable/ad_selectable_background"
+        android:clickable="true" 
+        android:visibility="gone"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/spanish"
+            style="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+			android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="58dp"
+            android:textColor="@android:color/black"
+            android:text="@string/spanish" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/spanish" />
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/germanContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@drawable/ad_selectable_background"
+        android:clickable="true" 
+                android:visibility="visible"
+                android:padding="5dp" >
+
+
+        <TextView
+            android:id="@+id/german"
+            style="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+			android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="58dp"
+            android:textColor="@android:color/black"
+            android:text="@string/german" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/german" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/italianContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@drawable/ad_selectable_background"
+        android:clickable="true"
+        android:visibility="visible"
+        android:padding="5dp" >
+
+        
+        <TextView
+            android:id="@+id/italian"
+            style="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+			android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="58dp"
+            android:textColor="@android:color/black"
+            android:text="@string/italian" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/italian" />
+    </LinearLayout-->
+
+</LinearLayout>

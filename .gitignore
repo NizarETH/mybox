@@ -1,0 +1,14 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+#/.idea/misc.xml
+#/.idea/modules.xml
+#/.idea/runConfigurations.xml
+/build
+**/build
+**/*.apk
+**/*.class
+**/play
+#**/app.iml
+

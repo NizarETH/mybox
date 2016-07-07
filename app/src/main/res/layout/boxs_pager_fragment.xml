@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CC222222"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
+        <com.paperpad.mybox.widgets.AutoResizeTextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/bandeau"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            />
+    </LinearLayout>
+
+
+    <com.paperpad.mybox.widgets.VerticalViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:id="@+id/separatorPager"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#88777777" />
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/back_to_boxs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal" >
+
+            <com.paperpad.mybox.widgets.ArrowImageView
+                android:id="@+id/back_to_bow_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:rotation="180" />
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical|left"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/back_to_category"
+                android:textSize="@dimen/label_window_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_and_share"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#88777777"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:id="@+id/share_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/share"
+                android:textSize="@dimen/label_window_medium"
+                />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#88777777"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <com.paperpad.mybox.widgets.ArrowImageView
+                android:id="@+id/up_box_page"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:rotation="-90" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#88777777"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <com.paperpad.mybox.widgets.ArrowImageView
+                android:id="@+id/down_box_page"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:rotation="90" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#88777777"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

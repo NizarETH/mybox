@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity" >
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:id="@+id/downloadedImageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/tableRow0"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_column00"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column01"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column02"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_column10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_column20"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/img_column13"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/img_column03"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="centerCrop"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+        
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="180dp"
+         android:layout_centerInParent="true"
+         android:gravity="center"
+         android:background="#1fffffff"
+        >
+        <com.todddavies.components.progressbar.ProgressWheel
+            android:id="@+id/pw_spinner"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            ProgressWheel:pwBarColor="#0097D6"
+            ProgressWheel:pwBarLength="60dp"
+            ProgressWheel:pwBarWidth="5dp"
+            ProgressWheel:pwRimColor="#330097D6"
+            ProgressWheel:pwRimWidth="2dp"
+            ProgressWheel:pwText="@string/loading"
+            ProgressWheel:pwTextColor="#222"
+            ProgressWheel:pwTextSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

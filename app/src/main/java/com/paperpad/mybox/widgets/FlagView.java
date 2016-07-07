@@ -1,0 +1,154 @@
+/**
+ * 
+ */
+package com.paperpad.mybox.widgets;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.widget.ImageView;
+
+/**
+ * @author euphordev04
+ *
+ */
+public class FlagView extends ImageView {
+
+	private Paint paint;
+	
+
+	/**
+	 * @param context
+	 */
+	public FlagView(Context context, int color) {
+		super(context);
+		paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setStrokeWidth(8);
+		paint.setStyle(Paint.Style.STROKE); 
+		paint.setColor(color);
+		//paint.setColor(Color.BLACK);
+	}
+	
+	/**
+	 * @param context
+	 */
+	public FlagView(Context context, Paint paint) {
+		super(context);
+		this.paint = paint;
+	}
+
+	/**
+	 * @param context
+	 * @param attrs
+	 */
+	public FlagView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param context
+	 * @param attrs
+	 * @param defStyle
+	 */
+	public FlagView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		// TODO Auto-generated constructor stub
+	}
+
+	/* (non-Javadoc)
+	 * @see android.widget.ImageView#onDraw(android.graphics.Canvas)
+	 */
+	@Override
+	protected void onDraw(Canvas canvas) {
+		Rect rect = canvas.getClipBounds();
+		Log.i(" bounds of arrow", rect.left+" bottom "+rect.bottom+" top "+rect.top + " right "+rect.right);
+		
+		Path path = new Path();
+		Point p1 = new Point();
+		Point p2 = new Point();
+		Point p3 = new Point();
+		Point p4 = new Point();
+		Point p5 = new Point();
+		Point p6 = new Point();
+//		int a = rect.bottom/8;
+//		int d = rect.bottom/2;
+//		int c = d/2; // la valeur de translation pour centrer le triangle
+//		p1.x = c+a;
+//		p1.y = 0;
+//		p2.x = c+a+d;
+//		p2.y = d;
+//		p3.x = c+a;
+//		p3.y = 2*d;
+//		p4.x = c+0;
+//		p4.y = 2*d-a;
+//		p5.x = c+d-a;
+//		p5.y = d;
+//		p6.x = c+0;
+//		p6.y = a;
+		
+		int a = getWidth(); //200; //rect.width()/2;
+		//int b = rect.height()/8;
+		int c = 0;//b/2; // la valeur de translation pour centrer le triangle
+
+		
+		p1.x = 0;
+		p1.y = c;
+		p2.x = a/2 - 20;
+		p2.y = c;
+		p3.x = a/2;
+		p3.y = 10;
+		p4.x = a/2 + 20;
+		p4.y = c;
+		p5.x = a;
+		p5.y = c;
+		
+		
+		path.moveTo(p1.x, p1.y);
+		path.lineTo(p2.x, p2.y);
+		path.lineTo(p3.x, p3.y);
+		path.lineTo(p4.x, p4.y);
+		path.lineTo(p5.x, p5.y);
+		//path.lineTo(p6.x, p6.y);
+		path.close();
+		if (paint == null) {
+			paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+	        paint.setStrokeWidth(8);
+			paint.setStyle(Paint.Style.STROKE); 
+			paint.setColor(Color.BLUE);
+		} 
+		canvas.drawLine(p1.x, p1.y, p2.x, p2.y, paint);
+        paint.setStrokeWidth(5);
+		canvas.drawLine(p2.x, p2.y , p3.x, p3.y, paint);
+		canvas.drawLine(p3.x, p3.y, p3.x + 1, p3.y + 1, paint);
+		canvas.drawLine(p3.x, p3.y, p4.x, p4.y, paint);
+        paint.setStrokeWidth(8);
+		canvas.drawLine(p4.x, p4.y, p5.x, p5.y, paint);
+
+//		canvas.drawLine(p1.x, p1.y, p2.x, p2.y, paint);
+		
+//		canvas.drawPath(path, paint );
+		super.onDraw(canvas);
+	}
+
+	/**
+	 * @return the paint
+	 */
+	public Paint getPaint() {
+		return paint;
+	}
+
+	/**
+	 * @param paint the paint to set
+	 */
+	public void setPaint(Paint paint) {
+		this.paint = paint;
+	}
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="app_name">"Moulins du Duc"</string>
+  <bool name="is_product_version">true</bool>
+  <string name="app_id">95</string>
+  <string name="sender_id">45702698730</string>
+  <string name="console_id">edb454238289d0c21ec856ef5074daca</string>
+  <string name="bandeau">"Les coffrets Cadeaux des Moulins du Duc"</string>
+</resources>

@@ -1,0 +1,2 @@
+include ':app', ':progresswheel-master'
+project(':progresswheel-master').projectDir = new File('ProgressWheel-master')

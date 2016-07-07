@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FAC5"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/createFormRecipient"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CC2DA1C2"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/cancel"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/btn_txt_x_small" />
+
+        <TextView
+            android:id="@+id/beneficiary_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@string/order_online"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/title_window"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/continue_order"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/btn_txt_x_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:id="@+id/mode1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="6" >
+
+            <ImageView
+                android:id="@+id/check_mark1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/checkmark_off" />
+
+            <LinearLayout
+                android:id="@+id/mode1_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_margin="10dp"
+                android:layout_weight="5"
+                android:gravity="center_vertical|left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_mode1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="@string/mode1_title"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/desc_mode1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@string/mode1_desc" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:id="@+id/mode2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="6" >
+
+            <ImageView
+                android:id="@+id/check_mark2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/checkmark_off" />
+
+            <LinearLayout
+                android:id="@+id/mode2_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_margin="10dp"
+                android:layout_weight="5"
+                android:gravity="center_vertical|left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_mode2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="@string/mode2_title"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/desc_mode2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:text="@string/mode2_desc" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

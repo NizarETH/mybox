@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myboxPortraitSV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.fragments.MyBoxPageFragment" >
+
+    <LinearLayout
+        android:id="@+id/contactsPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding" >
+
+        <LinearLayout
+            android:id="@+id/illustrations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:id="@+id/myboxInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/myboxInfoTV"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/title_window" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/picHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="8dp"
+                android:orientation="vertical" >
+
+                <com.paperpad.mybox.widgets.AViewFlipper
+                    android:id="@+id/viewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/commandHolder"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/offrez"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_commande"
+                    android:textSize="@dimen/title_window" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1f000000"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/personne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@+id/boxPrice"
+                        android:text="@string/people"
+                        android:textSize="@dimen/btn_txt_small" />
+
+                    <TextView
+                        android:id="@+id/boxPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/people"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/label_window_medium"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/itemOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center_vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/flip1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:id="@+id/infoBox"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="5dp" >
+
+                            <TextView
+                                android:id="@+id/personneBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom|center_horizontal"
+                                android:text="@string/people"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/boxPriceBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="top|center_horizontal"
+                                android:textSize="@dimen/label_window_medium"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:padding="5dp" >
+
+                            <LinearLayout
+                                android:id="@+id/quantityBox"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:singleLine="true"
+                                    android:text="@string/quantity" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp" >
+
+                                    <TextView
+                                        android:id="@+id/btnMinus"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="#CC777777"
+                                        android:focusable="true"
+                                        android:gravity="center"
+                                        android:text="-"
+                                        android:textColor="#ffffff"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/label_window_small"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/quantityNumber"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:paddingLeft="5dp"
+                                        android:paddingRight="5dp"
+                                        android:text="1"
+                                        android:textSize="@dimen/label_window_medium"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/btnPlus"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="#CC444444"
+                                        android:focusable="true"
+                                        android:gravity="center"
+                                        android:text="+"
+                                        android:textColor="#ffffff"
+                                        android:textSize="@dimen/label_window_small"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/orderBox"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/order_back_rounded_corners"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="5dp" >
+
+                                <LinearLayout
+                                    android:id="@+id/imgArrowContainer"
+                                    android:layout_width="15dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical" >
+
+                                    <ImageView
+                                        android:id="@+id/imgArrow"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:src="@drawable/icon_disclose_2x" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/orderLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:id="@+id/orderOnline"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:text="@string/order_btn"
+                                        android:textSize="@dimen/title_window"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/flip2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ff0000"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="5" >
+
+                        <TextView
+                            android:id="@+id/pers_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="#745862"
+                            android:gravity="center"
+                            android:text="2 pers."
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/pers_price"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:background="#fa4d29"
+                            android:gravity="center"
+                            android:text="699€"
+                            android:textColor="#ffffff"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/informations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/default_padding" >
+
+                <LinearLayout
+                    android:id="@+id/myboxInfoDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <WebView
+                        android:id="@+id/myboxInfoWV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/validityHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/jours_de_disponibilite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/validity"
+                android:textSize="@dimen/title_window" />
+
+            <LinearLayout
+                android:id="@+id/availability"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/monday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/mondayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/monday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgMonday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/tuesday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tuesdayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/tuesday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgTuesday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/wednesday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/wednesdayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/wednesday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgWednesday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/thursday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/thursdayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/thursday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgThursday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/friday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/fridayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/friday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgFriday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/saturday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/saturdayTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/saturday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgSaturday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/sunday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#22777777"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/sundayTxt"
+                        android:layout_width="40dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/sunday"
+                        android:textAppearance="@android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgSunday"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/unavailable" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
+                    <TextView
+                android:id="@+id/valid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/order_validity"
+                android:textSize="@dimen/html_txt" />
+        
+    </LinearLayout>
+
+</ScrollView>
